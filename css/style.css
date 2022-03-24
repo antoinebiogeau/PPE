@@ -131,6 +131,8 @@ main ul li img{
 }
 main ul li{
     align-items: center;
+    transform: scale(1);
+    transition: all 0.5s ease-in-out;
 }
 main ul li:hover{
     transform: scale(1.1);
@@ -421,6 +423,9 @@ a:hover{
     background-color: #7b2cbf;
     border: solid .2rem rgb(83, 81, 81);
     color: #fff;
+}
+.light a{
+    background-color: #7b2cbf;
 }
 .light a:hover{
     background-color: #7b2cbf;
