@@ -6,44 +6,256 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PPE</title>
     <link rel="stylesheet" href="./css/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
 </head>
 <body class="light">
     <header>
         <img src="./assets/logo.png" alt="logo">
         <h1>Films, séries TV ET <span> bien plus en illimité.</span></h1>
-        <span class="" id="toggle"><img src="./assets/sun_weather_icon_152003.png" alt="Jour nuit" id="theme"></span>
+        <span class="" id="toggle" aria-hidden="true">
+            <img src="./assets/sun_weather_icon_152003.png" alt="Jour nuit" id="theme">
+        </span>
     </header>
     <main>
         <h2>Prêt à regarder? Remplissez le formulaire proposé dans cette page</h2>
         <p>Tous les mois profitez de toutes les nouveautés série et cinéma. A partir du mois
             prochain on vous propose tous les classiques du cinéma. Où que vous soyez. Tous
             le s films en VO, VOST, VF et plus d'options</p>
-        <ul>
-            <li><img src="./assets/Ad_Astra.jpg" alt="ad astra"></li>
-            <li><img src="./assets/avatar.jpg" alt="avatar"></li>
-            <li><img src="./assets/avenger-afinity.jpg" alt="avenger"></li>
-            <li><img src="./assets/batman.jpg" alt="batman"></li>
-            <li><img src="./assets/captain_america.jpg" alt="captain america"></li>
-            <li><img src="./assets/hungergames.jpg" alt="hunger games"></li>
-            <li><img src="./assets/joker.jpg" alt="Joker"></li>
-            <li><img src="./assets/kamelott.jpg" alt="kamelott"></li>
-            <li><img src="./assets/matrix.jpg" alt="Matrix"></li>
-            <li><img src="./assets/Mondalorian.jpg" alt="Mandalorian"></li>
-            <li><img src="./assets/oss117.jpg" alt="OSS117"></li>
-            <li><img src="./assets/Scream.jpg" alt="Sream"></li>
-            <li><img src="./assets/spiderman.jpg" alt="Spiderman"></li>
-            <li><img src="./assets/starwars.jpg" alt="Starwars"></li>
-            <li><img src="./assets/tenet.jpg" alt="tenet"></li>
+        <ul class="grid-picture-large" aria-hidden="true">
+            <li data-img src="./assets/Ad_Astra.jpg" data-title="ad astra"
+            data-description="c'est un film épatant, entre action et émotion..." data-dates="02/01/1983">
+            <figure>
+                <img src="./assets/Ad_Astra.jpg" alt="ad astra" />
+                <figcaption>
+                    <h2>
+                        <i class="material-icons" aria-hidden="true">
+                            pages
+                        </i>
+                        Agrandir
+                    </h2>
+                </figcaption>
+            </figure>
+        </li>
+        <li data-image="./assets/avatar.jpg" data-title="avatar"
+                    data-description="c'est un film épatant, entre action et émotion..." data-dates="02/01/1983">
+                    <figure>
+                        <img src="./assets/avatar.jpg" alt="avatar" />
+                        <figcaption>
+                            <h2>
+                                <i class="material-icons" aria-hidden="true">
+                                    pages
+                                </i>
+                                Agrandir
+                            </h2>
+                        </figcaption>
+                    </figure>
+                </li>
+                <li data-image="./assets/avenger-afinity.jpg" data-title="avenger"
+                    data-description="c'est un film épatant, entre action et émotion..." data-dates="02/01/1983">
+                    <figure>
+                        <img src="./assets/avenger-afinity.jpg" alt="avenger" />
+                        <figcaption>
+                            <h2>
+                                <i class="material-icons" aria-hidden="true">
+                                    pages
+                                </i>
+                                Agrandir
+                            </h2>
+                        </figcaption>
+                    </figure>
+                </li>
+                <li data-image="./assets/batman.jpg" data-title="batman"
+                    data-description="c'est un film épatant, entre action et émotion..." data-dates="02/01/1983">
+                    <figure>
+                        <img src="./assets/batman.jpg" alt="batman" />
+                        <figcaption>
+                            <h2>
+                                <i class="material-icons" aria-hidden="true">
+                                    pages
+                                </i>
+                                Agrandir
+                            </h2>
+                        </figcaption>
+                    </figure>
+                </li>
+                <li data-image="./assets/captain_america.jpg" data-title="captain america"
+                    data-description="c'est un film épatant, entre action et émotion..." data-dates="02/01/1983">
+                    <figure>
+                        <img src="./assets/captain_america.jpg" alt="captain america" />
+                        <figcaption>
+                            <h2>
+                                <i class="material-icons" aria-hidden="true">
+                                    pages
+                                </i>
+                                Agrandir
+                            </h2>
+                        </figcaption>
+                    </figure>
+                </li>
+                <li data-image="./assets/hungergames.jpg" data-title="hungergames"
+                    data-description="c'est un film épatant, entre action et émotion..." data-dates="02/01/1983">
+                    <figure>
+                        <img src="./assets/hungergames.jpg" alt="hungergames" />
+                        <figcaption>
+                            <h2>
+                                <i class="material-icons" aria-hidden="true">
+                                    pages
+                                </i>
+                                Agrandir
+                            </h2>
+                        </figcaption>
+                    </figure>
+                </li>
+                <li data-image="./assets/joker.jpg" data-title="joker"
+                    data-description="c'est un film épatant, entre action et émotion..." data-dates="02/01/1983">
+                    <figure>
+                        <img src="./assets/joker.jpg" alt="joker" />
+                        <figcaption>
+                            <h2>
+                                <i class="material-icons" aria-hidden="true">
+                                    pages
+                                </i>
+                                Agrandir
+                            </h2>
+                        </figcaption>
+                    </figure>
+                </li>
+                <li data-image="./assets/kamelott.jpg" data-title="Kamelott"
+                    data-description="c'est un film épatant, entre action et émotion..." data-dates="02/01/1983">
+                    <figure>
+                        <img src="./assets/kamelott.jpg" alt="Kamelott" />
+                        <figcaption>
+                            <h2>
+                                <i class="material-icons" aria-hidden="true">
+                                    pages
+                                </i>
+                                Agrandir
+                            </h2>
+                        </figcaption>
+                    </figure>
+                </li>
+                <li data-image="./assets/matrix.jpg" data-title="matrix"
+                    data-description="c'est un film épatant, entre action et émotion..." data-dates="02/01/1983">
+                    <figure>
+                        <img src="./assets/matrix.jpg" alt="matrix" />
+                        <figcaption>
+                            <h2>
+                                <i class="material-icons" aria-hidden="true">
+                                    pages
+                                </i>
+                                Agrandir
+                            </h2>
+                        </figcaption>
+                    </figure>
+                </li>
+                <li data-image="./assets/Mondalorian.jpg" data-title="Mandalorian"
+                    data-description="c'est un film épatant, entre action et émotion..." data-dates="02/01/1983">
+                    <figure>
+                        <img src="./assets/Mondalorian.jpg" alt="Mandalorian" />
+                        <figcaption>
+                            <h2>
+                                <i class="material-icons" aria-hidden="true">
+                                    pages
+                                </i>
+                                Agrandir
+                            </h2>
+                        </figcaption>
+                    </figure>
+                </li>
+                <li data-image="./assets/oss117.jpg" data-title="oss117"
+                    data-description="c'est un film épatant, entre action et émotion..." data-dates="02/01/1983">
+                    <figure>
+                        <img src="./assets/oss117.jpg" alt="oss117" />
+                        <figcaption>
+                            <h2>
+                                <i class="material-icons" aria-hidden="true">
+                                    pages
+                                </i>
+                                Agrandir
+                            </h2>
+                        </figcaption>
+                    </figure>
+                </li>
+                <li data-image="./assets/Scream.jpg" data-title="Scream"
+                    data-description="c'est un film épatant, entre action et émotion..." data-dates="02/01/1983">
+                    <figure>
+                        <img src="./assets/Scream.jpg" alt="Scream" />
+                        <figcaption>
+                            <h2>
+                                <i class="material-icons" aria-hidden="true">
+                                    pages
+                                </i>
+                                Agrandir
+                            </h2>
+                        </figcaption>
+                    </figure>
+                </li>
+                <li data-image="./assets/spiderman.jpg" data-title="spiderman"
+                    data-description="c'est un film épatant, entre action et émotion..." data-dates="02/01/1983">
+                    <figure>
+                        <img src="./assets/spiderman.jpg" alt="spiderman" />
+                        <figcaption>
+                            <h2>
+                                <i class="material-icons" aria-hidden="true">
+                                    pages
+                                </i>
+                                Agrandir
+                            </h2>
+                        </figcaption>
+                    </figure>
+                </li>
+                <li data-image="./assets/starwars.jpg" data-title="star wars"
+                    data-description="c'est un film épatant, entre action et émotion..." data-dates="02/01/1983">
+                    <figure>
+                        <img src="./assets/starwars.jpg" alt="star wars" />
+                        <figcaption>
+                            <h2>
+                                <i class="material-icons" aria-hidden="true">
+                                    pages
+                                </i>
+                                Agrandir
+                            </h2>
+                        </figcaption>
+                    </figure>
+                </li>
+                <li data-image="./assets/tenet.jpg" data-title="Le Silence des Agneaux"
+                    data-description="c'est un film épatant, entre action et émotion..." data-dates="02/01/1983">
+                    <figure>
+                        <img src="./assets/tenet.jpg" alt="LeSilencedesAgneaux" />
+                        <figcaption>
+                            <h2>
+                                <i class="material-icons" aria-hidden="true">
+                                    pages
+                                </i>
+                                Agrandir
+                            </h2>
+                        </figcaption>
+                    </figure>
+                </li>
         </ul>
+    
     </main>
     <nav>
         <ul>
-            <li><a href="">Cliquez ici pour commencer</a></li>
+            <li><a href="./formulaire.html">Cliquez ici pour commencer</a></li>
         </ul>
     </nav>
     <footer>
        <p>&copy;Lord Beubeuh - 2022</p> 
     </footer>
+    <div class="parent-modale" role="dialog" aria-label="true">
+        <figure class="modale">
+            <button aria-label="closed">
+                <span class="material-icons">clear</span>
+            </button>
+            <img src="https://via.placeholder.com/500" alt="picture" />
+            <figcaption class="desc">
+                <h3>title</h3>
+                <p> </p>
+                <time>Years : </time>
+            </figcaption>
+        </figure>
+    </div>
     <script src="./js/app.js"></script>
 </body>
 </html>

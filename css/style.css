@@ -38,6 +38,21 @@ button{
     border:0;
     background-color:transparent;
 }
+button,input,select{
+    padding:0;
+    border:0;
+    background-color:transparent;
+    font-size: inherit;
+}
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+select::-ms-expand {
+    display: none;
+}
  /*theme*/
  header{
     display: flex;
@@ -55,7 +70,6 @@ body{
 header{
     padding: 2rem;
 }
-
 header h1{
     line-height: 4.5rem;
     transition: all 0.6s ease-in-out;
@@ -106,15 +120,21 @@ main p{
 main ul{
     display: grid;
     grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
 }
 main ul li img{
-    display: block;
-    max-width: 15rem;
-    padding-bottom: 1rem;
-    margin: 0 auto;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+    object-fit: cover;
 }
 main ul li{
     align-items: center;
+}
+main ul li:hover{
+    transform: scale(1.1);
+    transition: all 0.5s ease-in-out;
 }
 a{
     display: block;
@@ -152,38 +172,185 @@ fieldset legend{
     font-size: 2rem;
     transition: all .2s;
 }
-form{
-    margin: 5rem auto;
-    border: solid .3rem rgb(83, 81, 81);
-    box-shadow: #444 0 0 2rem;
-    text-align: left;
-    background-color: rgb(34, 31, 31);
-    border-radius: 2rem;
-    transition: all .2s;
+form *{
+    display: block;
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: .9rem;
+    text-transform: capitalize;
+}
+form fieldset{
+    border: none;
+    margin: 2rem auto;
+    padding: 2rem 0;
+}
+form label{
+    display: block;
+    padding: 1rem 0rem;
+    color: var(--white);
+    text-shadow: var(--secondary) .25rem .25rem 0rem;
+    font-weight: bold;
+    font-size: 2rem;
+}
+form fieldset legend{
+    display: block;
+    margin: 0 auto;
+    color: var(--white);
+    text-shadow: var(--secondary) .25rem .25rem 0, var(--tertiare) .5rem .5rem 0;
+    text-align: center;
+    font-weight: bold;
+    font-size: 2.5rem;    
+}
+form input[type="submit"]{
+    display: block;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    border-radius: .5rem;
+    text-align: center;
+    background-color: var(--tertiare);
+    width: 100%;
+    color: var(--white);
+    cursor: pointer;
+    font-weight: bolder;
+}
+form input:focus, form select:focus{
+    box-shadow: 0 0 .7rem var(--tertiare);
+    border: solid .2rem var(--tertiare);
+    outline: none;
 }
 form input{
-    width: 100%;
     display: block;
-    padding: 1.4rem;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    color: #fff;
-    border: solid .2rem rgb(83, 81, 81);
-    border-radius: 1rem;
-}
-form input:last-child{
-    background-color: #444;
-    color: #fff;
-    padding: 1rem;
     border-radius: .5rem;
-    margin-top: 1rem;
-    transition: .8s;
+    padding: 1rem 0.5rem;
+    color: #f0efef;
+    background-color: #333;
+    border: solid .2rem var(--default);
+}
+form select{
+    display: block;
+    height: 100%;
+    width: 100%;
+    padding: 1rem 0.5rem;
+    border-radius: .5rem;
+    color: #cccccc;
+    background-color: #333;
+    border: solid .2rem var(--default);
+}
+form select option{
+    display: block;
+    padding: 1rem 0rem;
+    border-radius: .5rem;
 }
 form input:last-child:hover{
     background-color: #ff9800;
     cursor: pointer;
     transition: .8s;
 }
+
+
+main .grid-picture-large{
+    display:  grid;
+    max-width: 90rem;
+    margin: 5rem auto;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+    padding: 1rem;
+}
+ul figure{
+    position: relative;
+    height: 32vh;
+}
+ul figure .material-icons{
+    vertical-align: -.4rem;
+}
+/* Overley effect */
+ul figure figcaption{
+    display: grid;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-color: rgba(0,0,0,0.6);
+    align-items: center;
+    transform: scale(0);
+    transition: all 500ms ease-in-out;
+    transform-origin: center center;
+    cursor: pointer;
+    color: #fff;
+    text-align: center;
+}
+ul figure:hover figcaption{
+    transform: scale(1);
+}
+/* modale */
+.parent-modale{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6);
+    opacity: 0;
+    z-index: -1;
+    transition: all 0.4s ease-in-out;
+}
+.parent-modale .modale{
+    max-width: 80rem;
+    padding: 1rem;
+    margin: 0 auto;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #222;
+    box-shadow: 0 0 1rem rgba(0,0,0,0.6);
+    z-index: 2;
+    cursor: pointer;
+    
+    
+}
+.parent-modale .modale .desc h3{
+	font-size: 2rem;
+	border-radius: 0 0 .5rem .5rem;
+    font-weight: 400;
+    background-color: #222;
+    color: #fff;
+    padding: 1rem;
+}
+.parent-modale .modale img{
+	width: 100%;
+	height: 80vh;
+	border-radius: .5rem .5rem 0 0;
+}
+.parent-modale .modale .desc{
+    position: static;
+    transition: none;
+    transform: none;
+	width: 100%;
+    background-color: #222;
+    color: #fff;
+    
+}
+.modale-active{
+    z-index: 1;
+    opacity: 1;
+    transform-origin: center center;
+}
+.parent-modale .modale .desc p :is(time){
+    padding: 1rem;
+}
+.parent-modale .modale button{
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    font-size: 2rem;
+    z-index: 2;
+    color: #fff;
+    cursor: pointer;
+}
+
 a{
     padding: 3rem;
     font-size: 2rem;
@@ -207,18 +374,19 @@ a:hover{
     transition: all 1s ease-in-out;
 }
 .light header{
-    background: #704fdc;
+    background: #5a189a;
 }
 .light h1{
     color: #fff;
 }
 .light h1 span{
     color: #fff;
-    background-color:#704fdc;
+    background-color:#5a189a;
 }
 .light p{
     color: #222;
-    border: solid 0rem rgb(83, 81, 81);;
+    border: solid 0rem rgb(83, 81, 81);
+    background-color: #fff;
 }
 .light fieldset{
     background-color: #fff;
@@ -228,8 +396,8 @@ a:hover{
 }
 .light fieldset legend{
     padding-top: 2rem;
-    color: #222;
-    background-color: #7189ff;
+    color: #fff;
+    background-color: #7b2cbf;
     padding: 1rem;
     border-radius: 1rem;
     
@@ -240,9 +408,45 @@ a:hover{
     box-shadow: rgb(180, 174, 174);
     
 }
+.light form input{
+    background-color: #fafafa;
+    color: #222;
+}
+.light form select
+{
+    background-color: #fafafa;
+    color: #222;
+}
 .light form input:last-child{
-    background-color: #7189ff;
+    background-color: #7b2cbf;
     border: solid .2rem rgb(83, 81, 81);
+    color: #fff;
+}
+.light a:hover{
+    background-color: #7b2cbf;
+    cursor: pointer;
+    transition: .8s;
+}
+
+
+.light .parent-modale{
+    background-color: rgba(0,0,0,0.5);
+}
+.light .parent-modale .modale{
+    background-color: #fff;
+    box-shadow: 0 0 1rem rgba(0,0,0,0.6);
+}
+.light .parent-modale .modale .desc h3{
+    background-color: #fff;
+    color: #222;
+}
+.light .parent-modale .modale .desc{
+    background-color: #fff;
+    color: #222;
+    
+}
+.light .parent-modale .modale button{
+    color: #fff;
 }
 
 @media screen and (max-width: 60rem){
@@ -262,7 +466,7 @@ a:hover{
     }
     header span{
         align-content: flex-end;
-    }main ul{
+    }main .grid-picture-large{
         grid-template-columns: repeat(3, 1fr);
     }
     
