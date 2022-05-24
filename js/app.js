@@ -36,6 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
     open_modal = function () {
         console.log(this.dataset);
         /* les variables */
+        let id = this.dataset.id;
         let image = this.dataset.image;
         let title = this.dataset.title;
         let desc = this.dataset.description;
@@ -50,6 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
     };
     for (rows of el) {
         rows.addEventListener("click", open_modal);
+        console.log(rows);
     }
     closed.addEventListener("click", () => {
         modal.classList.remove("modale-active");
