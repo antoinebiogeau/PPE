@@ -18,7 +18,7 @@ session_start();
     </header>
     <main>
     <?php include_once "./src/connect_BDD.inc.php" ?>
-        <h1><?= $_SESSION["nom"]  ?></h1>
+        <h1><?php isset($_SESSION['nom']) ? print $_SESSION['nom'] : return null ?></h1>
         <h2>Prêt à la compétition ? Remplissez le formulaire proposé dans cette page</h2>
             <p>Tous les mois profitez de toutes les nouveautés et opportunités. A partir du mois
                 prochain on vous propose toutes les séance de sport sur vos support préférés</p>
