@@ -4,8 +4,6 @@
     include_once './src/header.inc.php';
 ?>
 <?php
-//seesion
-session_start();
 ?>
 <body class="light">
     <header>
@@ -17,7 +15,8 @@ session_start();
         <a href="./user_account.php"><img src="./assets/compte-utilisateur-1.png" alt="compte"></a>
     </header>
     <main>
-    <?php include_once "./src/connect_BDD.inc.php" ?>
+    <?php include_once "./src/connect_bdd.inc.php" ?>
+    
         <h2>Prêt à la compétition ? Remplissez le formulaire proposé dans cette page</h2>
             <p>Tous les mois profitez de toutes les nouveautés et opportunités. A partir du mois
                 prochain on vous propose toutes les séance de sport sur vos support préférés</p>
@@ -54,10 +53,16 @@ session_start();
             </ul>
     </main>
     <nav>
-        <ul>
-            <li><a href="./formulaire.php">Cliquez ici pour commencer</a></li>
-            <li><a href="./login.php">Se connecter</a></li>
-        </ul>
+        <?php
+         if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+        } else {
+            print('<ul>
+                <li><a href="./formulaire.php">Cliquez ici pour commencer</a></li>
+                <li><a href="./login.php">Se connecter</a></li>
+            </ul>');
+        }
+
+        ?>
     </nav>
     <footer>
        <p>&copy;Lord Beubeuh - 2022</p> 
@@ -72,6 +77,10 @@ session_start();
                 <h3>title</h3>
                 <p> </p>
                 <time>Years : </time>
+                <form method="post">
+                        <input type="submit" value="S'inscrire à l'évenement">
+                </form>
+                <?php  include_once "./src/event_histo.inc.php"  ?>
             </figcaption>
         </figure>
     </div>

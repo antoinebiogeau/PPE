@@ -5,4 +5,11 @@
     <title>Streaming</title>
     <link rel="stylesheet" href="./css/style.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <?php
+    //session_start();
+   session_start();
+    if (session_status() == PHP_SESSION_NONE) {
+        session_start();
+    }
+    ?>
 </head>

@@ -48,7 +48,14 @@ document.addEventListener("DOMContentLoaded", () => {
         document.querySelector(".modale .desc p").innerHTML = `<strong>Déscription : </strong>${desc}`;
         document.querySelector(".modale .desc time").innerText = `Annee ${dates}`;
         document.querySelector(".modale .desc time").setAttribute("datetime", dates);
+        let btn = document.querySelector("main .grid-picture-large");
+		btn.addEventListener("click", (e) => {
+			e.preventDefault();
+			let stateObj = { id: "100" };
+			window.history.pushState(stateObj, "PPE", "/PPE/index.php?id_event=" + id);
+	});
     };
+
     for (rows of el) {
         rows.addEventListener("click", open_modal);
         console.log(rows);

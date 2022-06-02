@@ -2,7 +2,7 @@
 <html lang="en">
     <?php
     include_once './src/header.inc.php';
-    session_start(); //démarrage de la session
+    include_once './src/connect_bdd.inc.php';
     if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
     } else {
         header('Location: ./login.php');
@@ -25,6 +25,9 @@
                 <li><?= $_SESSION["pays"] ?></li>
             </ul>
             <a href="#">Voir l'historique des évenements</a>
+            <?php
+            include_once './src/list_event.inc.php';
+            ?>
         </section>
         <!--bouton deconnexion-->
         <section>

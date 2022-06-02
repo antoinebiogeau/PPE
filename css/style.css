@@ -57,7 +57,7 @@ select::-ms-expand {
  header{
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
     background-color: rgb(22, 22, 22);
     transition: all 1s;
 }
@@ -84,6 +84,17 @@ header h1 span{
     color: #000;
     background-color: #ff9800;
     border-radius: 1rem;
+}
+header a{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    max-width: 5rem;
+    max-height: 5rem;
+    position: absolute;
+    top: 1.5rem;
+    right: 2rem;
+
 }
 .rota{
     transition: all 1s ease-in-out;
@@ -138,6 +149,30 @@ main ul li:hover{
     transform: scale(1.1);
     transition: all 0.5s ease-in-out;
 }
+main table{
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin: 2rem auto;
+    text-align: center;
+}
+main table th{
+    background-color: #444;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+}
+main table td{
+    text-align: center;
+    padding: 1rem;
+}
+main table tr:nth-child(even){
+    background-color: #444;
+}
+main table tr:nth-child(odd){
+    background-color: #222222;
+}
+
 a{
     display: block;
     margin: 0rem auto;
