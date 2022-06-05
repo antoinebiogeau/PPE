@@ -51,19 +51,18 @@
                 ?>
 
             </ul>
-    </main>
-    <nav>
         <?php
          if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
         } else {
-            print('<ul>
+            print('<ul class = "connect">
                 <li><a href="./formulaire.php">Cliquez ici pour commencer</a></li>
                 <li><a href="./login.php">Se connecter</a></li>
             </ul>');
         }
 
         ?>
-    </nav>
+    </main>
+
     <footer>
        <p>&copy;Lord Beubeuh - 2022</p> 
     </footer>

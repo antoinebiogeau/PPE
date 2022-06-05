@@ -1,26 +1,28 @@
 <!DOCTYPE html>
 <?php
     include_once './src/header.inc.php';
-    session_start(); //démarrage de la session
     //verifie si la session est ouverte
     if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
         //redirige vers l'index
         header('Location: ./index.php');
-    } else {
-        echo "Please log in first to see this page.";
     }
     $id_session = session_id();
 ?>
-
-<main>
-    <h1>Login</h1>
+<body class="light">
+    <header>
+        <img src="./assets/logo.png" alt="logo">
+        <h1>Maison Des Ligues -<span>Tous Les Sports</span></h1>
+        <span class="" id="toggle"><img src="./assets/sun_weather_icon_152003.png" alt="Jour nuit" id="theme"></span>
+    </header>
+    <main>
+    <h2>Login</h2>
     <fieldset>
                 <legend>
                     <h3>Veuillez vous connecter</h3>
                 </legend>
                 <form action="<?php $_SERVER['PHP_SELF']?>"  method="post">
                 <label for="login">
-                    Votre login
+                    Votre email
                 </label>
                 <input 
                     type="email" 
@@ -72,4 +74,6 @@
                 }  
         ?>
     </main>
+    <script src="./js/app.js"></script>
+</body>
 </html>

@@ -2,19 +2,17 @@
 <html lang="fr">
 <?php
     include_once './src/header.inc.php';
-    session_start(); //démarrage de la session
+    include './src/connect_bdd.inc.php';
     //verifie si la session est ouverte
     if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
         //redirige vers l'index
         header('Location: ./index.php');
-    } else {
-        echo "Please log in first to see this page.";
-    }
+    } 
 ?>
 <body class="light">
     <header>
         <img src="./assets/logo.png" alt="logo">
-        <h1>Films, séries TV et <span>bien plus en illimité.</span></h1>
+        <h1>Maison Des Ligues -<span>Tous Les Sports</span></h1>
         <span class="" id="toggle"><img src="./assets/sun_weather_icon_152003.png" alt="Jour nuit" id="theme"></span>
     </header>
     <main>
@@ -23,77 +21,27 @@
             <p>Tous les mois profitez de toutes les nouveautés série et cinéma. A partir du mois
                 prochain on vous propose tous les classiques du cinéma. Où que vous soyez. Tous
                 le s films en VO, VOST, VF et plus d'options</p>
-                <ul class="grid-picture-large" aria-hidden="true">
-                    <li data-img src="./assets/Ad_Astra.jpg" data-title="ad astra"
-                    data-description="c'est un film épatant, entre action et émotion..." data-dates="02/01/1983">
-                    <figure>
-                        <img src="./assets/Ad_Astra.jpg" alt="ad astra" />
-                        <figcaption>
-                            <h2>
-                                <i class="material-icons" aria-hidden="true">
-                                    pages
-                                </i>
-                                Agrandir
-                            </h2>
-                        </figcaption>
-                    </figure>
-                </li>
-                <li data-image="./assets/avatar.jpg" data-title="avatar"
-                            data-description="c'est un film épatant, entre action et émotion..." data-dates="02/01/1983">
-                            <figure>
-                                <img src="./assets/avatar.jpg" alt="avatar" />
-                                <figcaption>
-                                    <h2>
-                                        <i class="material-icons" aria-hidden="true">
-                                            pages
-                                        </i>
-                                        Agrandir
-                                    </h2>
-                                </figcaption>
-                            </figure>
-                        </li>
-                        <li data-image="./assets/avenger-afinity.jpg" data-title="avenger"
-                            data-description="c'est un film épatant, entre action et émotion..." data-dates="02/01/1983">
-                            <figure>
-                                <img src="./assets/avenger-afinity.jpg" alt="avenger" />
-                                <figcaption>
-                                    <h2>
-                                        <i class="material-icons" aria-hidden="true">
-                                            pages
-                                        </i>
-                                        Agrandir
-                                    </h2>
-                                </figcaption>
-                            </figure>
-                        </li>
-                        <li data-image="./assets/batman.jpg" data-title="batman"
-                            data-description="c'est un film épatant, entre action et émotion..." data-dates="02/01/1983">
-                            <figure>
-                                <img src="./assets/batman.jpg" alt="batman" />
-                                <figcaption>
-                                    <h2>
-                                        <i class="material-icons" aria-hidden="true">
-                                            pages
-                                        </i>
-                                        Agrandir
-                                    </h2>
-                                </figcaption>
-                            </figure>
-                        </li>
-                        <li data-image="./assets/captain_america.jpg" data-title="captain america"
-                            data-description="c'est un film épatant, entre action et émotion..." data-dates="02/01/1983">
-                            <figure>
-                                <img src="./assets/captain_america.jpg" alt="captain america" />
-                                <figcaption>
-                                    <h2>
-                                        <i class="material-icons" aria-hidden="true">
-                                            pages
-                                        </i>
-                                        Agrandir
-                                    </h2>
-                                </figcaption>
-                            </figure>
-                        </li>
+                <ul>
+                <?php
+            try {
+                    // On récupère tout le contenu de la table recipes
+                    $request = "SELECT * FROM `evenement` LIMIT 5";
+                    $recipesStatement = $_bdd->prepare($request);
+                    $recipesStatement->execute();
+                    $evenement = $recipesStatement->fetchAll();
+
+                    // On affiche chaque recette une à une
+                    foreach ($evenement as $event) {
+                        echo
+                        '<li >' 
+                             . '<figure>' . '<img src=' . $event['image'] . ' alt=' . $event['nom'] . " />" .
+
+                            '</li>';
+                    }
+                } catch (Exception $e) {
+                    die('Erreur : ' . $e->getMessage());
+                }
+                ?>
             </ul>
         </section>
         <form method="POST">
@@ -133,7 +81,6 @@
             </fieldset>
         </form>
     </main>
-    <?php include './src/connect_bdd.inc.php'; ?>
     <?php
     //recuperation des données du formulaire et envoie dnas la base de données
     if (isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['email']) && isset($_POST['ville']) && isset($_POST['pays']) && isset($_POST['password'])) {

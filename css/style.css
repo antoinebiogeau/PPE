@@ -81,8 +81,7 @@ header h1{
 header h1 span{
     transition: all 1s ease-in-out;
     padding: 1rem;
-    color: #000;
-    background-color: #ff9800;
+    color: #ff9800;
     border-radius: 1rem;
 }
 header a{
@@ -133,6 +132,13 @@ main ul{
     grid-template-columns: repeat(5, 1fr);
     gap: 1rem;
 }
+main .connect{
+    display: block;
+    margin: 0rem auto;
+}
+main .connect li{
+    margin-bottom: 1rem;
+}
 main ul li img{
     display: inline-block;
     width: 100%;
@@ -172,6 +178,7 @@ main table tr:nth-child(even){
 main table tr:nth-child(odd){
     background-color: #222222;
 }
+
 
 a{
     display: block;
@@ -487,6 +494,29 @@ a:hover{
 }
 .light .parent-modale .modale button{
     color: #fff;
+}
+main table{
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin: 2rem auto;
+    text-align: center;
+}
+.light main table th{
+    background-color: #fafafa;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+}
+.light main table td{
+    text-align: center;
+    padding: 1rem;
+}
+.light main table tr:nth-child(even){
+    background-color: #fafafa;
+}
+.light main table tr:nth-child(odd){
+    background-color: #fff;
 }
 
 @media screen and (max-width: 60rem){
