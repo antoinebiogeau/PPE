@@ -20,16 +20,16 @@
                 Bonjour <?= $_SESSION["nom"] ?>
             </h2>
         </section>
-        <section class="userInfo">
+        <section >
             <h2>Information</h2>
-            <ul>
+            <ul class="userInfo">
                 <li><?= $_SESSION["nom"] ?></li>
                 <li><?= $_SESSION["prenom"] ?></li>
                 <li><?= $_SESSION["mail"] ?></li>
                 <li><?= $_SESSION["ville"] ?></li>
                 <li><?= $_SESSION["pays"] ?></li>
             </ul>
-            <a href="#">Voir l'historique des évenements</a>
+            <h2>Historique des evenements</h2>
             <?php
             include_once './src/list_event.inc.php';
             ?>

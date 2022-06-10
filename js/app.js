@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     modale = document.querySelector(".parent-modale");
     //aller a index.html
     home.addEventListener("click", () => {
-        window.location.href = "index.html";
+        window.location.href = "index.php";
     });
     //dark mode
     img.addEventListener("click", () => {

@@ -8,7 +8,6 @@ try {
             '',
             array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8', $_pdo_options)
         );
-        echo "Connexion à la base de données réussie";
         $_response = $_bdd->query('SELECT * FROM client');
     } catch (Exception $e) {
         die('Erreur : ' . $e->getMessage());

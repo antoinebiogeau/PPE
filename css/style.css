@@ -394,7 +394,11 @@ ul figure:hover figcaption{
     color: #fff;
     cursor: pointer;
 }
-
+.userInfo{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    margin: 1rem auto;
+}
 a{
     padding: 3rem;
     font-size: 2rem;
